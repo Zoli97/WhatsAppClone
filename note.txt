@@ -1,0 +1,247 @@
+use express js server 
+mongodb  to store the messages 
+use mongoose to access those messages 
+mongodb its not a real time db , pusher for real time stuff
+firebase as a backend service for the build
+
+
+frontend
+react app 
+on the frontend i using firebase for auth, hosting..
+
+
+backend 
+firebase
+express
+nodejs
+mongodb
+
+dibes19967@klblogs.com
+mongo77
+
+the process once there is a change in mongodb selected collection that will fire of a changestream,
+ pusher which will fire of the axios or fetch function on the front which will refresh the whole conversation and i will see in real time
+
+ because absolute position to the element inside of this container
+ isntall into backend
+
+ the backend build is an express js its a way building a backend server running on port 9000 
+ "start": "node server.js" -> latter on fire up my app when its deployd on live 
+ node for prod and nodemon for dev mode.
+ deps: express, mongoose(for conectivity to mongodb )
+ mongodb is no sql db 
+ the clusterr is a server that will run my db
+ create first api
+ when i suing nodejs is not actual build in way could do something like this const import express from express.
+ syntaxa de es6 modules 
+
+ ljhIcaG65EFCAdlG - pass
+ app.get("/", (req, resp) => resp.status(200).send("Hello lume"));
+once my server get called, endpoint / like nothing on the end
+200 -> OK the req is working ok server is saying ok.
+ 
+get req method is when fetch info 
+post is when i trying to push info up (rest convetion)
+postman is an app that can use to call api send back to me the message
+need to create a db user and set the network acces
+
+longs tring : mongodb+srv://zoli:<password>@cluster0.fbxv7xe.mongodb.net/?retryWrites=true&w=majority
+
+userNewParser: true, parse the url in uri 
+
+userCreateIndex: true,
+userNewParser: true,
+userUNifiedTopology: true,
+
+
+//define data schima ()
+
+scehma define how the data is gonna be build: message, name, timestamp, recevie status.
+timestamp generating on the frontend
+give a name to my collection inside the db i can have multiple docs
+
+setting collection an data structure.
+creating neew api route which will be using through to post messages into mongodb
+it came back in format of json i need to do something to get correctly back
+get the json back
+
+now crate an api that will give back all the data that i have in db.
+
+resp.status(200).send(data); -> when i download data i not creating on the server
+changestrsam its gonna listen and watch my app if it a change it will trigger the pusher.
+
+
+
+http://localhost:9000/messages/sync get method 
+
+
+{
+    "_id": "636918b41f29eeb1ddf920f6",
+    "__v": 0
+},
+{
+    "_id": "6369192f4f056569df25c84f",
+    "__v": 0
+},
+{
+    "_id": "636919424ba4f6252b3631c4",
+    "__v": 0
+},
+{
+    "_id": "636919684ba4f6252b3631c6",
+    "__v": 0
+},
+{
+    "_id": "6369199c4ba4f6252b3631c8",
+    "__v": 0
+},
+{
+    "_id": "636919ea4ba4f6252b3631ca",
+    "__v": 0
+},
+{
+    "_id": "636919fa01be6633a4af1092",
+    "__v": 0
+},
+{
+    "_id": "63691a1401be6633a4af1094",
+    "message": "Yoo this works",
+    "name": "Dan Vostinar",
+    "timestamp": "I am the time !!",
+    "received": false,
+    "__v": 0
+},
+{
+    "_id": "636a25f0ed12fdd755e1f3d1",
+    "message": "Yoo this works",
+    "name": "Dan Vostinar",
+    "timestamp": "I am the time !!",
+    "received": false,
+    "__v": 0
+},
+{
+    "_id": "636a260982de0c6cad543cde",
+    "message": "Yoo this works",
+    "name": "Dan Vostinar",
+    "timestamp": "I am the time !!",
+    "received": false,
+    "__v": 0
+}
+]
+
+OKPQqeDniYlK90Fn
+
+realtime db when something is added or deleted the app will trigger and exact the same time the app changes gonna be made.
+ with mongodb its not the case. refresh all the time
+
+ mongodb change stream its gonna give me the ability to mongodb that firebase all ready has.
+ create a changestream set to collections, whenever its a change in that collection its a new meesage added the changestream
+ will trigger the pusher (upload the message to pusher).
+
+ it will connected to my frontend and the pusher server will trigger my frontend and force push down my data (pushes up and down)
+  and that time i will make a new req to my backend and that will refresh.
+
+
+ push the mess to the backend and on the frontend i will need to do a fetch a again i need press the refresh button to get the new meesage fetch the meesage every 5 second
+ frontend will trigger the backend and the backend will triger the pusher which trigger the frontend
+
+ once db mongo connection is open 
+
+ trigger the pusher add if gate 
+
+ sync with frontend
+
+
+ app.use(cors());
+//course header, allowing the req to come from any endpoint, everything ill gonna be accepted once this drills run i will push the req and next which will be these functions to run
+app.use((req, resp, next) => {
+  resp.setHeader("Access-Control-Allow-Origin", "*");
+  resp.setHeader("Access-Control-Allow-Headers", "*");
+});
+
+
+
+
+2 ways: 
+refetch all the messages or i can initially fetch all the messages and everything is come in just push the new meesage
+
+Axios is a promise-based HTTP Client for node.js and the browser. It is isomorphic (= it can run in the browser and nodejs with the same codebase). On the server-side it uses the native node.js http module, while on the client (browser) it uses XMLHttpRequests.
+
+every single time a message get send in i should see.
+every time a new meesage get push in it will come up in the array
+
+
+render this on the frontend
+
+
+
+
+
+
+
+
+
+
+<p className="chat__reciever chat__message">
+<span className="chat__name">Paula</span>
+this is a message
+<span className="chat__timestamp">{new Date().toUTCString()}</span>
+</p>
+
+{/* <p className="chat__reciever chat__message">
+<span className="chat__name">Paula</span>
+this is a message
+<span className="chat__timestamp">{new Date().toUTCString()}</span>
+</p> */}
+
+
+the hidden button
+every time i type in fires an event and settheinput
+
+
+{
+
+    "message":" this is my user :)) !",
+    "name":"Ioa",
+    "timestamp":"I am the time !!",
+    "received": true
+
+} -> its not me its the user or users on the chat
+
+
+<input type="file" accept="/image/*" style={{ display: "none" }} />
+
+
+
+
+
+
+
+
+{/* <div className="chat__details">
+<p className="chat__message chat__reciever">hellooo da</p>
+</div>
+
+<div className="chat__details">
+<Avatar src={profilePicture} className="avatar" />
+<p className="chat__message">hellooo</p>
+</div>
+
+<div className="chat__details">
+<p className="chat__message chat__reciever">hellooo da</p>
+</div>
+<div className="chat__details">
+<p className="chat__message chat__reciever">hellooo da</p>
+</div>
+
+<div className="chat__details">
+<Avatar src={profilePicture} className="avatar" />
+<p className="chat__message">hellooo</p>
+</div>
+
+<div className="chat__details">
+<p className="chat__message chat__reciever">hellooo da</p>
+</div> */}
+
+
+This is a clone that I created with React framework on the frontend side and on the backend side I used nodejs, mongodb and pusher that create a realtime sync in the mongodb.

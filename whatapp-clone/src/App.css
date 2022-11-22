@@ -1,0 +1,15 @@
+.App {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: #daddd3;
+}
+
+.app__body {
+  display: flex;
+  background-color: #ededed;
+  margin-top: -3em;
+  width: 90vw;
+  height: 90vh;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
